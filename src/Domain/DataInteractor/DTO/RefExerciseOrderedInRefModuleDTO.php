@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\DataInterfactor\DTO;
+namespace App\Domain\DataInteractor\DTO;
 
 use COL\Library\Infrastructure\Adapter\Database\SQL\AbstractSQLBaseDTO;
 
@@ -14,6 +14,8 @@ class RefExerciseOrderedInRefModuleDTO extends AbstractSQLBaseDTO
     {
         return self::STATUS_ACTIVE;
     }
+
+
 
     public function getReferenceExercise(): ReferenceExerciseDTO
     {

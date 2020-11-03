@@ -48,6 +48,24 @@ services:
         networks:
           - "crucible-of-heroes-v2"
 
+    mysql-reference:
+        container_name: mysql-${PROJECT}
+        build:
+          context: ./.docker/mysql/${MYSQL_VERSION}
+        ports:
+          - ${MYSQL_PORT}
+        environment:
+          MYSQL_DATABASE: ${MYSQL_DB_NAME}
+          MYSQL_ROOT_USER: ${MYSQL_USER}
+          MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+          MYSQL_USER: ${MYSQL_USER}
+          MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+        volumes:
+          - ${PWD}:/var/www/html
+        working_dir: /var/www/html
+        networks:
+          - "crucible-of-heroes-v2"
+
 networks:
     crucible-of-heroes-v2:
         driver: bridge

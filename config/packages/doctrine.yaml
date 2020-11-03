@@ -1,0 +1,28 @@
+doctrine:
+    dbal:
+        connections:
+            workout_reference:
+                host:     '%env(resolve:MYSQL_HOST)%'
+                port:     '%env(resolve:MYSQL_PORT)%'
+                dbname:   '%env(resolve:MYSQL_DATABASE)%'
+                user:     '%env(resolve:MYSQL_USER)%'
+                password: '%env(resolve:MYSQL_PASSWORD)%'
+                driver: 'pdo_mysql'
+                server_version: '%env(resolve:MYSQL_VERSION)%'
+                charset:  UTF8
+    orm:
+        default_entity_manager: workout_reference
+        entity_managers:
+            workout_reference:
+                connection: workout_reference
+                mappings:
+                    App:
+                        is_bundle: false
+                        type: xml
+                        dir: '%kernel.project_dir%/config/doctrine'
+                        prefix: 'App\Domain\DataInteractor\DTO'
+                    COL\Library\Infrastructure:
+                        is_bundle: false
+                        type: xml
+                        dir: '%kernel.project_dir%/vendor/crucible-of-legends/col-lib-api-infrastructure/config/doctrine'
+                        prefix: 'COL\Library\Infrastructure\Adapter\Database\SQL'

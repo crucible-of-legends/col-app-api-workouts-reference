@@ -1,5 +1,6 @@
 #Setup automatically docker compose variables
 include .env
+-include .env.local
 
 DOCKER=docker-compose
 DOCKER_EXEC= ${DOCKER} exec
@@ -24,6 +25,7 @@ reup:
 start_working: vendor
 	sleep 10
 	make create_db
+	make load_fixtures
 
 vendor: up
 	@$(DOCKER_EXEC) php composer install
@@ -33,3 +35,15 @@ up: down
 
 down:
 	@$(DOCKER) down --remove-orphan
+
+create_db:
+	$(SF_CONSOLE) doctrine:database:drop --force --if-exists --env=$(APP_ENV)
+	$(SF_CONSOLE) doctrine:database:create --env=$(APP_ENV)
+	$(SF_CONSOLE) doctrine:schema:drop --env=dev
+	$(SF_CONSOLE) doctrine:schema:update --env=dev --force
+
+load_fixtures:
+	$(SF_CONSOLE) hautelook:fixtures:load --purge-with-truncate --no-interaction --env=dev --no-bundles
+
+mysql.connect.reference:
+	@$(DOCKER_EXEC) mysql-reference /bin/bash -c 'mysql -u$$MYSQL_USER -p$$MYSQL_PASSWORD $$MYSQL_DATABASE'

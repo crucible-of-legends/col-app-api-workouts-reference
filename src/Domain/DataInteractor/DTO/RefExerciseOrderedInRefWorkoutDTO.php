@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\DataInterfactor\DTO;
+namespace App\Domain\DataInteractor\DTO;
 
 use COL\Library\Infrastructure\Adapter\Database\SQL\AbstractSQLBaseDTO;
 

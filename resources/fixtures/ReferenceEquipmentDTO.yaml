@@ -1,0 +1,6 @@
+App\Domain\DataInteractor\DTO\ReferenceEquipmentDTO:
+    equipment_barbell:
+        name: barbell
+        canonicalName: barbell
+        createdDate: "<(new DateTime())>"
+        updatedDate: "<(new DateTime())>"
