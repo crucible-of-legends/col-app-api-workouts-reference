@@ -2,7 +2,7 @@
 
 namespace App\Domain\DataInteractor\DTO;
 
-use COL\Library\Infrastructure\Adapter\Database\SQL\AbstractSQLBaseDTO;
+use COL\Library\Infrastructure\Common\DTO\AbstractSQLBaseDTO;
 
 class RefExerciseOrderedInRefWorkoutDTO extends AbstractSQLBaseDTO
 {

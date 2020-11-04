@@ -1,6 +1,9 @@
 App\Domain\DataInteractor\DTO\ReferenceEquipmentDTO:
-    equipment_barbell:
-        name: barbell
-        canonicalName: barbell
+    base_equipment (template):
+        status: active
         createdDate: "<(new DateTime())>"
         updatedDate: "<(new DateTime())>"
+
+    equipment_{barbell, dumbell, bench, band} (extends base_equipment):
+        name: "<current()>"
+        canonicalName: "<current()>"

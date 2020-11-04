@@ -2,7 +2,7 @@
 
 namespace App\Domain\DataInteractor\DTO;
 
-use COL\Library\Infrastructure\Adapter\Database\SQL\AbstractSQLBaseDTO;
+use COL\Library\Infrastructure\Common\DTO\AbstractSQLBaseDTO;
 
 class RefExerciseOrderedInRefModuleDTO extends AbstractSQLBaseDTO
 {
@@ -14,8 +14,6 @@ class RefExerciseOrderedInRefModuleDTO extends AbstractSQLBaseDTO
     {
         return self::STATUS_ACTIVE;
     }
-
-
 
     public function getReferenceExercise(): ReferenceExerciseDTO
     {

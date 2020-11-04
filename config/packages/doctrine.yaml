@@ -25,4 +25,4 @@ doctrine:
                         is_bundle: false
                         type: xml
                         dir: '%kernel.project_dir%/vendor/crucible-of-legends/col-lib-api-infrastructure/config/doctrine'
-                        prefix: 'COL\Library\Infrastructure\Adapter\Database\SQL'
+                        prefix: 'COL\Library\Infrastructure\Common\DTO'
