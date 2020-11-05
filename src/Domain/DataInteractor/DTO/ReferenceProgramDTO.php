@@ -5,7 +5,7 @@ namespace App\Domain\DataInteractor\DTO;
 use COL\Library\Infrastructure\Common\DTO\AbstractSQLBaseDTO;
 use COL\Library\Infrastructure\Common\DTO\TimeAwareDTOTrait;
 
-class ReferenceProgramDTO extends AbstractSQLBaseDTO
+final class ReferenceProgramDTO extends AbstractSQLBaseDTO
 {
     use TimeAwareDTOTrait;
 

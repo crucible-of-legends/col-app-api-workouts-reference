@@ -4,7 +4,7 @@ namespace App\Domain\DataInteractor\DTO;
 
 use COL\Library\Infrastructure\Common\DTO\AbstractSQLBaseDTO;
 
-class RefExerciseOrderedInRefModuleDTO extends AbstractSQLBaseDTO
+final class RefExerciseOrderedInRefModuleDTO extends AbstractSQLBaseDTO
 {
     private ReferenceExerciseDTO $referenceExercise;
     private ReferenceModuleDTO $referenceModule;

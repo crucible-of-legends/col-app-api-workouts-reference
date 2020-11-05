@@ -16,3 +16,7 @@ services:
     App\Controller\:
         resource: '../src/Controller/'
         tags: ['controller.service_arguments']
+
+    #COL\Library\Infrastructure\Adapter\Database\DatabaseAdapterInterface: '@COL\Library\Infrastructure\Adapter\Database\SQL\SQLDatabaseAdapter'
+    COL\Library\Infrastructure\:
+        resource: '../vendor/crucible-of-legends/col-lib-api-infrastructure/src/'

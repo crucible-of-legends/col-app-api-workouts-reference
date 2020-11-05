@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route(path="/api/references/programs", name="program_")
  */
-class ReferenceProgramController extends AbstractBaseController
+final class ReferenceProgramController extends AbstractBaseController
 {
     /**
      * @Route(name="get_many", path="", methods={"GET"})

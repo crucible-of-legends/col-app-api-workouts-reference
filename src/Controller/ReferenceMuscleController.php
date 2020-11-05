@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route(path="/api/references/muscles", name="muscles_")
  */
-class ReferenceMuscleController extends AbstractBaseController
+final class ReferenceMuscleController extends AbstractBaseController
 {
     /**
      * @Route(name="get_many", path="", methods={"GET"})
