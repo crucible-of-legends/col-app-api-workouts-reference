@@ -2,22 +2,21 @@
 
 namespace App\Controller;
 
-use App\Domain\UseCase\ReferenceEquipment\GetManyReferenceEquipmentUseCase;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route(path="/api/references/equipments", name="equipment_")
+ * @Route(path="/api/references/exercises", name="exercise_")
  */
-final class ReferenceEquipmentController extends AbstractBaseController
+final class ReferenceExerciseReferenceController extends AbstractBaseReferenceController
 {
     /**
      * @Route(name="get_many", path="", methods={"GET"})
      */
-    public function getMany(Request $request, GetManyReferenceEquipmentUseCase $getManyReferenceEquipmentUseCase): JsonResponse
+    public function getMany(Request $request): JsonResponse
     {
-        return $this->buildResponse($getManyReferenceEquipmentUseCase->execute());
+        return new JsonResponse(['status' => 'ok']);
     }
     /**
      * @Route(name="get_one", path="/{canonicalName}", methods={"GET"})

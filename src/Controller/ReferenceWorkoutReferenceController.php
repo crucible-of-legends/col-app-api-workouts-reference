@@ -7,9 +7,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route(path="/api/references/muscles", name="muscles_")
+ * @Route(path="/api/references/workouts", name="workout_")
  */
-final class ReferenceMuscleController extends AbstractBaseController
+final class ReferenceWorkoutReferenceController extends AbstractBaseReferenceController
 {
     /**
      * @Route(name="get_many", path="", methods={"GET"})
