@@ -3,6 +3,7 @@ App\Domain\DataInteractor\DTO\ReferenceEquipmentDTO:
         status: active
         createdDate: "<(new DateTime())>"
         updatedDate: "<(new DateTime())>"
+        image: "https://via.placeholder.com/150C"
 
     equipment_{barbell, dumbell, bench, band} (extends base_equipment):
         name: "<current()>"

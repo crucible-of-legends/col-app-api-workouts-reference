@@ -11,8 +11,8 @@ class ReferenceEquipmentDTO extends AbstractSQLBaseDTO
 
     private string $name;
     private string $canonicalName;
-    private string $image;
-    private array $shops;
+    private ?string $image;
+    private array $shops = [];
 
     public function getDefaultStatus(): string
     {
@@ -39,12 +39,12 @@ class ReferenceEquipmentDTO extends AbstractSQLBaseDTO
         $this->canonicalName = $canonicalName;
     }
 
-    public function getImage(): string
+    public function getImage(): ?string
     {
         return $this->image;
     }
 
-    public function setImage(string $image): void
+    public function setImage(?string $image): void
     {
         $this->image = $image;
     }

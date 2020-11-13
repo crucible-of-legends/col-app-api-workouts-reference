@@ -2,12 +2,15 @@
 
 namespace App\Domain\UseCase\ReferenceEquipment;
 
-use App\Domain\DataInteractor\DTO\ReferenceEquipmentDTO;
 use App\Domain\DataInteractor\DTOProvider\ReferenceEquipmentDTOProvider;
 use App\Domain\View\Presenter\ReferenceEquipment\GetManyReferenceEquipmentViewPresenter;
+use COL\Library\Contracts\View\Model\Reference\GetManyReferenceEquipmentViewModel;
 
 final class GetManyReferenceEquipmentUseCase
 {
+    private const DEFAULT_PAGE_NUMBER = 1;
+    private const DEFAULT_NB_PER_PAGE = 50;
+
     private ReferenceEquipmentDTOProvider $provider;
     private GetManyReferenceEquipmentViewPresenter $presenter;
 
@@ -21,10 +24,16 @@ final class GetManyReferenceEquipmentUseCase
     }
 
     /**
-     * @return ReferenceEquipmentDTO[]
+     * @return GetManyReferenceEquipmentViewModel[]
      */
-    public function execute(): array
+    public function execute(array $criteria = [], ?int $pageNumber = null, ?int $nbPerPage = null): array
     {
-        return $this->presenter->buildMultipleObjectVueModel($this->provider->getManyByCriteria());
+        $pageNumber = $pageNumber ?? self::DEFAULT_PAGE_NUMBER;
+        $nbPerPage = $nbPerPage ?? self::DEFAULT_NB_PER_PAGE;
+
+        $nbTotalResults = $this->provider->countByCriteria($criteria);
+        $results = $this->provider->getManyByCriteria($criteria, [], [], $pageNumber, $nbPerPage);
+
+        return $this->presenter->buildMultipleObjectVueModel($results, $nbTotalResults, $pageNumber, $nbPerPage);
     }
 }

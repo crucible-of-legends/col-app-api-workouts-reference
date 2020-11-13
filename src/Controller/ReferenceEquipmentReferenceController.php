@@ -17,7 +17,10 @@ final class ReferenceEquipmentReferenceController extends AbstractBaseReferenceC
      */
     public function getMany(Request $request, GetManyReferenceEquipmentUseCase $getManyReferenceEquipmentUseCase): JsonResponse
     {
-        return $this->buildResponse($getManyReferenceEquipmentUseCase->execute());
+        $page = $request->query->get('page', null);
+        $nbPerPage = $request->query->get('nbPerPage', null);
+
+        return $this->buildResponse($getManyReferenceEquipmentUseCase->execute([], $page, $nbPerPage));
     }
     /**
      * @Route(name="get_one", path="/{canonicalName}", methods={"GET"})
