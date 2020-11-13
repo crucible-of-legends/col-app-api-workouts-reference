@@ -67,12 +67,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/crucible-of-legends/col-lib-api-contracts.git",
-                "reference": "4db5b438ee598ae799c3e721c869acc5afb124c3"
+                "reference": "50d6cf5125b0372659ea68da502c41b16ebf32fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/crucible-of-legends/col-lib-api-contracts/zipball/4db5b438ee598ae799c3e721c869acc5afb124c3",
-                "reference": "4db5b438ee598ae799c3e721c869acc5afb124c3",
+                "url": "https://api.github.com/repos/crucible-of-legends/col-lib-api-contracts/zipball/50d6cf5125b0372659ea68da502c41b16ebf32fd",
+                "reference": "50d6cf5125b0372659ea68da502c41b16ebf32fd",
                 "shasum": ""
             },
             "require": {
@@ -100,7 +100,7 @@
                 "source": "https://github.com/crucible-of-legends/col-lib-api-contracts/tree/1.x",
                 "issues": "https://github.com/crucible-of-legends/col-lib-api-contracts/issues"
             },
-            "time": "2020-11-06T08:55:22+00:00"
+            "time": "2020-11-13T14:56:20+00:00"
         },
         {
             "name": "crucible-of-legends/col-lib-api-infrastructure",
@@ -108,12 +108,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/crucible-of-legends/col-lib-api-infrastructure.git",
-                "reference": "85223bbccd27f825418744cac26c2bce5d7ea440"
+                "reference": "c893d59ef868da80166763436894d8000140f498"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/crucible-of-legends/col-lib-api-infrastructure/zipball/85223bbccd27f825418744cac26c2bce5d7ea440",
-                "reference": "85223bbccd27f825418744cac26c2bce5d7ea440",
+                "url": "https://api.github.com/repos/crucible-of-legends/col-lib-api-infrastructure/zipball/c893d59ef868da80166763436894d8000140f498",
+                "reference": "c893d59ef868da80166763436894d8000140f498",
                 "shasum": ""
             },
             "require": {
@@ -147,7 +147,7 @@
                 "source": "https://github.com/crucible-of-legends/col-lib-api-infrastructure/tree/1.x",
                 "issues": "https://github.com/crucible-of-legends/col-lib-api-infrastructure/issues"
             },
-            "time": "2020-11-13T14:25:55+00:00"
+            "time": "2020-11-13T15:27:02+00:00"
         },
         {
             "name": "doctrine/annotations",

@@ -3,34 +3,73 @@
 namespace App\Domain\View\Presenter\ReferenceEquipment;
 
 use App\Domain\DataInteractor\DTO\ReferenceEquipmentDTO;
-use COL\Library\Contracts\View\Model\Reference\GetManyReferenceEquipmentViewModel;
+use COL\Library\Contracts\View\Model\BaseViewModelInterface;
+use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\GetManyLargeReferenceEquipmentViewModel;
+use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\GetManyMediumReferenceEquipmentViewModel;
+use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\GetManySmallReferenceEquipmentViewModel;
+use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\Nested\ReferenceEquipmentShopNestedModel;
+use COL\Library\Infrastructure\Common\DTO\BaseDTOInterface;
 use COL\Library\Infrastructure\Common\View\AbstractMultipleObjectViewPresenter;
 
 final class GetManyReferenceEquipmentViewPresenter extends AbstractMultipleObjectViewPresenter
 {
     /**
-     * @param ReferenceEquipmentDTO[] $dtos
+     * @param BaseDTOInterface|ReferenceEquipmentDTO $dto
      *
-     * @return GetManyReferenceEquipmentViewModel[]
+     * @return BaseViewModelInterface|GetManySmallReferenceEquipmentViewModel
      */
-    public function buildMultipleObjectVueModel(array $dtos, ?int $nbTotal = null, ?int $pageNumber = null, ?int $nbPerPage = null): array
+    public function buildVueModelSmallFormat(BaseDTOInterface $dto): BaseViewModelInterface
     {
-        $models = [];
-        foreach ($dtos as $dto) {
-            $models[] = $this->buildReferenceEquipmentModel($dto);
-        }
+        $model = new GetManySmallReferenceEquipmentViewModel();
 
-        return $this->formatWithPagination($models, $nbTotal, $pageNumber, $nbPerPage);
+        $model->name = $dto->getName();
+        $model->canonicalName = $dto->getCanonicalName();
+
+        return $model;
     }
 
-    private function buildReferenceEquipmentModel(ReferenceEquipmentDTO $dto)
+    /**
+     * @param BaseDTOInterface|ReferenceEquipmentDTO $dto
+     *
+     * @return BaseViewModelInterface|GetManyMediumReferenceEquipmentViewModel
+     */
+    public function buildVueModelMediumFormat(BaseDTOInterface $dto): BaseViewModelInterface
     {
-        $model = new GetManyReferenceEquipmentViewModel();
+        $model = new GetManyMediumReferenceEquipmentViewModel();
 
         $model->name = $dto->getName();
         $model->canonicalName = $dto->getCanonicalName();
         $model->image = $dto->getImage();
 
         return $model;
+    }
+
+    /**
+     * @param BaseDTOInterface|ReferenceEquipmentDTO $dto
+     *
+     * @return BaseViewModelInterface|GetManyLargeReferenceEquipmentViewModel
+     */
+    public function buildVueModelLargeFormat(BaseDTOInterface $dto): BaseViewModelInterface
+    {
+        $model = new GetManyLargeReferenceEquipmentViewModel();
+
+        $model->name = $dto->getName();
+        $model->canonicalName = $dto->getCanonicalName();
+        $model->image = $dto->getImage();
+        $model->shops = $this->buildNestedShops($dto->getShops());
+
+        return $model;
+    }
+
+    private function buildNestedShops(array $shops): array
+    {
+        $nestedShops = [];
+        foreach ($shops as $shop) {
+            $nested = new ReferenceEquipmentShopNestedModel();
+
+            $nestedShops[] = $nested;
+        }
+
+        return $nestedShops;
     }
 }

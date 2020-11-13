@@ -4,7 +4,6 @@ namespace App\Domain\UseCase\ReferenceEquipment;
 
 use App\Domain\DataInteractor\DTOProvider\ReferenceEquipmentDTOProvider;
 use App\Domain\View\Presenter\ReferenceEquipment\GetManyReferenceEquipmentViewPresenter;
-use COL\Library\Contracts\View\Model\Reference\GetManyReferenceEquipmentViewModel;
 
 final class GetManyReferenceEquipmentUseCase
 {
@@ -23,16 +22,19 @@ final class GetManyReferenceEquipmentUseCase
         $this->presenter = $presenter;
     }
 
-    /**
-     * @return GetManyReferenceEquipmentViewModel[]
-     */
-    public function execute(array $criteria = [], ?int $pageNumber = null, ?int $nbPerPage = null): array
+    public function execute(
+        string $displayFormat,
+        array $criteria = [],
+        ?int $pageNumber = null,
+        ?int $nbPerPage = null
+    ): array
     {
         $pageNumber = $pageNumber ?? self::DEFAULT_PAGE_NUMBER;
         $nbPerPage = $nbPerPage ?? self::DEFAULT_NB_PER_PAGE;
 
         return $this->presenter->buildMultipleObjectVueModel(
             $this->provider->getManyByCriteria($criteria, [], [], $pageNumber, $nbPerPage),
+            $displayFormat,
             $this->provider->countByCriteria($criteria),
             $pageNumber,
             $nbPerPage
