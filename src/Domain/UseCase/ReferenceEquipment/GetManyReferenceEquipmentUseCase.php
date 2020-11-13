@@ -31,9 +31,11 @@ final class GetManyReferenceEquipmentUseCase
         $pageNumber = $pageNumber ?? self::DEFAULT_PAGE_NUMBER;
         $nbPerPage = $nbPerPage ?? self::DEFAULT_NB_PER_PAGE;
 
-        $nbTotalResults = $this->provider->countByCriteria($criteria);
-        $results = $this->provider->getManyByCriteria($criteria, [], [], $pageNumber, $nbPerPage);
-
-        return $this->presenter->buildMultipleObjectVueModel($results, $nbTotalResults, $pageNumber, $nbPerPage);
+        return $this->presenter->buildMultipleObjectVueModel(
+            $this->provider->getManyByCriteria($criteria, [], [], $pageNumber, $nbPerPage),
+            $this->provider->countByCriteria($criteria),
+            $pageNumber,
+            $nbPerPage
+        );
     }
 }
