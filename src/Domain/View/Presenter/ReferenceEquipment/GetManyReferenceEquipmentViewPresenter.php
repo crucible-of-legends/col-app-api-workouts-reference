@@ -67,6 +67,10 @@ final class GetManyReferenceEquipmentViewPresenter extends AbstractMultipleObjec
         foreach ($shops as $shop) {
             $nested = new ReferenceEquipmentShopNestedModel();
 
+            $nested->shopName = $shop->getName();
+            $nested->shopLogo = $shop->getLogo();
+            $nested->shopUrl = $shop->getUrl();
+
             $nestedShops[] = $nested;
         }
 

@@ -2,6 +2,7 @@
 
 namespace App\Domain\DataInteractor\DTO;
 
+use COL\Library\Infrastructure\Adapter\Database\SQL\DatabaseCollectionAdapter;
 use COL\Library\Infrastructure\Common\DTO\AbstractSQLBaseDTO;
 use COL\Library\Infrastructure\Common\DTO\TimeAwareDTOTrait;
 
@@ -12,7 +13,7 @@ class ReferenceEquipmentDTO extends AbstractSQLBaseDTO
     private string $name;
     private string $canonicalName;
     private ?string $image;
-    private array $shops = [];
+    private $shops = [];
 
     public function getDefaultStatus(): string
     {
@@ -51,7 +52,7 @@ class ReferenceEquipmentDTO extends AbstractSQLBaseDTO
 
     public function getShops(): array
     {
-        return $this->shops;
+        return DatabaseCollectionAdapter::getDatabaseCollection($this->shops);
     }
 
     public function setShops(array $shops): void

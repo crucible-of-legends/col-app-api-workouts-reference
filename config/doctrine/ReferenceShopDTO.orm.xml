@@ -1,0 +1,22 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="App\Domain\DataInteractor\DTO\ReferenceShopDTO" table="reference_shop">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+
+        <indexes>
+            <index name="name_idx" columns="name"/>
+        </indexes>
+
+        <field name="name" type="string" length="150" nullable="false" unique="true" />
+        <field name="url" type="string" length="150" nullable="false" unique="true" />
+        <field name="logo" type="string" length="255" nullable="true" unique="false" />
+        <field name="createdDate" type="datetime" nullable="false" unique="false" />
+        <field name="updatedDate" type="datetime" nullable="false" unique="false" />
+
+        <many-to-many field="equipments" mapped-by="shops" target-entity="App\Domain\DataInteractor\DTO\ReferenceEquipmentDTO"/>
+    </entity>
+</doctrine-mapping>

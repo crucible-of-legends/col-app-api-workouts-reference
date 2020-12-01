@@ -1,0 +1,10 @@
+App\Domain\DataInteractor\DTO\ReferenceShopDTO:
+    base_shop (template):
+        status: active
+        createdDate: "<(new DateTime())>"
+        updatedDate: "<(new DateTime())>"
+        logo: "https://via.placeholder.com/150C"
+
+    shop_{amazon, rogue, gorilla, rep, kingsbox} (extends base_shop):
+        name: "<current()>"
+        url: "https://www.<current()>.com/"

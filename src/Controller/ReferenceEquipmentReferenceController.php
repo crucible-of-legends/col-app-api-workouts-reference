@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Domain\UseCase\ReferenceEquipment\GetManyReferenceEquipmentUseCase;
+use App\Domain\UseCase\ReferenceEquipment\GetOneReferenceEquipmentUseCase;
 use COL\Library\Infrastructure\Common\View\MultipleObjectViewPresenterInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,8 +28,8 @@ final class ReferenceEquipmentReferenceController extends AbstractBaseReferenceC
     /**
      * @Route(name="get_one", path="/{canonicalName}", methods={"GET"})
      */
-    public function getOne(Request $request, string $canonicalName): JsonResponse
+    public function getOne(Request $request, string $canonicalName, GetOneReferenceEquipmentUseCase $getOneReferenceEquipmentUseCase): JsonResponse
     {
-        return new JsonResponse(['status' => $canonicalName]);
+        return $this->buildResponse($getOneReferenceEquipmentUseCase->execute($canonicalName));
     }
 }

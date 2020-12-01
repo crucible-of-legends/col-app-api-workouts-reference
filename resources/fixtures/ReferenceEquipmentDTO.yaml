@@ -5,6 +5,12 @@ App\Domain\DataInteractor\DTO\ReferenceEquipmentDTO:
         updatedDate: "<(new DateTime())>"
         image: "https://via.placeholder.com/150C"
 
-    equipment_{barbell, dumbell, bench, band} (extends base_equipment):
+    equipment_{barbell, dumbell, bench} (extends base_equipment):
         name: "<current()>"
         canonicalName: "<current()>"
+        shops: ['@shop_rogue', '@shop_kingsbox', '@shop_rep']
+
+    equipment_jump_rope (extends base_equipment):
+        name: "jump-rope"
+        canonicalName: "jump-rope"
+        shops: ['@shop_amazon', '@shop_gorilla']

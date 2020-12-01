@@ -4,7 +4,8 @@ namespace App\Domain\UseCase\ReferenceEquipment;
 
 use App\Domain\DataInteractor\DTOProvider\ReferenceEquipmentDTOProvider;
 use App\Domain\View\Presenter\ReferenceEquipment\GetOneReferenceEquipmentViewPresenter;
-use COL\Library\Contracts\View\Model\Reference\GetOneReferenceEquipmentViewModel;
+use COL\Library\Contracts\View\Model\BaseViewModelInterface;
+use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\GetOneReferenceEquipmentViewModel;
 
 final class GetOneReferenceEquipmentUseCase
 {
@@ -20,8 +21,18 @@ final class GetOneReferenceEquipmentUseCase
         $this->presenter = $presenter;
     }
 
-    public function execute(string $canonicalName): GetOneReferenceEquipmentViewModel
+    /**
+     * @param string $canonicalName
+     *
+     * @return BaseViewModelInterface|GetOneReferenceEquipmentViewModel
+     */
+    public function execute(string $canonicalName): ?GetOneReferenceEquipmentViewModel
     {
-        return $this->presenter->buildSingleObjectVueModel($this->provider->getOneByCriteria(['canonicalName' => $canonicalName]));
+        $viewModel = $this->provider->getOneByCriteria(['canonicalName' => $canonicalName]);
+        if (null === $viewModel) {
+            return null;
+        }
+
+        return $this->presenter->buildSingleObjectVueModel($viewModel);
     }
 }

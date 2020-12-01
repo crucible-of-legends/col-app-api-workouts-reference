@@ -3,8 +3,10 @@
 namespace App\Domain\View\Presenter\ReferenceEquipment;
 
 use App\Domain\DataInteractor\DTO\ReferenceEquipmentDTO;
+use App\Domain\DataInteractor\DTO\ReferenceShopDTO;
 use COL\Library\Contracts\View\Model\BaseViewModelInterface;
-use COL\Library\Contracts\View\Model\Reference\GetOneReferenceEquipmentViewModel;
+use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\GetOneReferenceEquipmentViewModel;
+use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\Nested\ReferenceEquipmentShopNestedModel;
 use COL\Library\Infrastructure\Common\DTO\BaseDTOInterface;
 use COL\Library\Infrastructure\Common\View\SingleObjectViewPresenterInterface;
 
@@ -20,7 +22,30 @@ final class GetOneReferenceEquipmentViewPresenter implements SingleObjectViewPre
         $model = new GetOneReferenceEquipmentViewModel();
         $model->name = $dto->getName();
         $model->canonicalName = $dto->getCanonicalName();
+        $model->image = $dto->getImage();
+        $model->shops = $this->buildNestedShops($dto->getShops());
 
         return $model;
+    }
+
+    /**
+     * @param ReferenceShopDTO[] $shops
+     *
+     * @return ReferenceEquipmentShopNestedModel[]
+     */
+    private function buildNestedShops(array $shops): array
+    {
+        $nestedShops = [];
+        foreach ($shops as $shop) {
+            $nested = new ReferenceEquipmentShopNestedModel();
+
+            $nested->shopName = $shop->getName();
+            $nested->shopLogo = $shop->getLogo();
+            $nested->shopUrl = $shop->getUrl();
+
+            $nestedShops[] = $nested;
+        }
+
+        return $nestedShops;
     }
 }

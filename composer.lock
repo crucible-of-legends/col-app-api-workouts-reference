@@ -108,12 +108,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/crucible-of-legends/col-lib-api-infrastructure.git",
-                "reference": "c893d59ef868da80166763436894d8000140f498"
+                "reference": "80702a85dbf6f77f45bff9a4eb1518be4ead7274"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/crucible-of-legends/col-lib-api-infrastructure/zipball/c893d59ef868da80166763436894d8000140f498",
-                "reference": "c893d59ef868da80166763436894d8000140f498",
+                "url": "https://api.github.com/repos/crucible-of-legends/col-lib-api-infrastructure/zipball/80702a85dbf6f77f45bff9a4eb1518be4ead7274",
+                "reference": "80702a85dbf6f77f45bff9a4eb1518be4ead7274",
                 "shasum": ""
             },
             "require": {
@@ -147,7 +147,7 @@
                 "source": "https://github.com/crucible-of-legends/col-lib-api-infrastructure/tree/1.x",
                 "issues": "https://github.com/crucible-of-legends/col-lib-api-infrastructure/issues"
             },
-            "time": "2020-11-13T15:27:02+00:00"
+            "time": "2020-12-01T14:21:11+00:00"
         },
         {
             "name": "doctrine/annotations",

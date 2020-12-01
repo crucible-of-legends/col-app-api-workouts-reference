@@ -17,5 +17,16 @@
         <field name="image" type="string" length="255" nullable="true" unique="false" />
         <field name="createdDate" type="datetime" nullable="false" unique="false" />
         <field name="updatedDate" type="datetime" nullable="false" unique="false" />
+
+        <many-to-many field="shops" inversed-by="equipments" target-entity="App\Domain\DataInteractor\DTO\ReferenceShopDTO">
+            <join-table name="shop_has_equipment">
+                <join-columns>
+                    <join-column name="equipment_id" referenced-column-name="id" />
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="shop_id" referenced-column-name="id" />
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>
     </entity>
 </doctrine-mapping>
