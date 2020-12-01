@@ -28,7 +28,7 @@ final class GetOneReferenceEquipmentUseCase
      */
     public function execute(string $canonicalName): ?GetOneReferenceEquipmentViewModel
     {
-        $viewModel = $this->provider->getOneByCriteria(['canonicalName' => $canonicalName]);
+        $viewModel = $this->provider->getOneByCriteria(['canonicalName' => $canonicalName], ['shop']);
         if (null === $viewModel) {
             return null;
         }
