@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Domain\UseCase\ReferenceExercise\GetManyReferenceExerciseUseCase;
-use COL\Library\Infrastructure\Common\View\MultipleObjectViewPresenterInterface;
+use App\Domain\UseCase\ReferenceExercise\GetOneReferenceExerciseUseCase;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -29,8 +29,8 @@ final class ReferenceExerciseReferenceController extends AbstractBaseReferenceCo
     /**
      * @Route(name="get_one", path="/{canonicalName}", methods={"GET"})
      */
-    public function getOne(Request $request, string $canonicalName): JsonResponse
+    public function getOne(Request $request, string $canonicalName, GetOneReferenceExerciseUseCase $getOneReferenceExerciseUseCase): JsonResponse
     {
-        return new JsonResponse(['status' => $canonicalName]);
+        return $this->buildResponse($getOneReferenceExerciseUseCase->execute($canonicalName));
     }
 }
