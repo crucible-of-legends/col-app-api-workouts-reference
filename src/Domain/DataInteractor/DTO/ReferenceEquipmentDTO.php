@@ -50,11 +50,17 @@ class ReferenceEquipmentDTO extends AbstractSQLBaseDTO
         $this->image = $image;
     }
 
+    /**
+     * @return ReferenceShopDTO[]
+     */
     public function getShops(): array
     {
         return DatabaseCollectionAdapter::getDatabaseCollection($this->shops);
     }
 
+    /**
+     * @param ReferenceShopDTO[] $shops
+     */
     public function setShops(array $shops): void
     {
         $this->shops = $shops;

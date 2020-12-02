@@ -1,0 +1,21 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="App\Domain\DataInteractor\DTO\ReferenceMuscleDTO" table="reference_muscle">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+
+        <indexes>
+            <index name="name_idx" columns="name"/>
+            <index name="canonicalName_idx" columns="canonicalName"/>
+        </indexes>
+
+        <field name="name" type="string" length="150" nullable="false" unique="true" />
+        <field name="canonicalName" type="string" length="150" nullable="false" unique="true" />
+        <field name="image" type="string" length="255" nullable="true" unique="false" />
+        <field name="createdDate" type="datetime" nullable="false" unique="false" />
+        <field name="updatedDate" type="datetime" nullable="false" unique="false" />
+    </entity>
+</doctrine-mapping>

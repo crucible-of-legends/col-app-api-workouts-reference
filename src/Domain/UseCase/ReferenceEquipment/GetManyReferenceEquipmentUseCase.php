@@ -3,10 +3,12 @@
 namespace App\Domain\UseCase\ReferenceEquipment;
 
 use App\Domain\DataInteractor\DTOProvider\ReferenceEquipmentDTOProvider;
+use App\Domain\UseCase\GetManyUserCaseInterface;
 use App\Domain\View\Presenter\ReferenceEquipment\GetManyReferenceEquipmentViewPresenter;
+use COL\Library\Contracts\View\Model\BaseViewModelInterface;
 use COL\Library\Infrastructure\Common\View\MultipleObjectViewPresenterInterface;
 
-final class GetManyReferenceEquipmentUseCase
+final class GetManyReferenceEquipmentUseCase implements GetManyUserCaseInterface
 {
     private const DEFAULT_PAGE_NUMBER = 1;
     private const DEFAULT_NB_PER_PAGE = 50;
@@ -23,6 +25,9 @@ final class GetManyReferenceEquipmentUseCase
         $this->presenter = $presenter;
     }
 
+    /**
+     * @return BaseViewModelInterface[]
+     */
     public function execute(
         string $displayFormat,
         array $criteria = [],

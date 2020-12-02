@@ -57,7 +57,7 @@ final class GetManyReferenceExerciseViewPresenter extends AbstractMultipleObject
         $model->name = $dto->getName();
         $model->canonicalName = $dto->getCanonicalName();
         $model->video = $dto->getVideo();
-        $model->equipments = $this->buildNestedEquipments($dto->getReferenceEquipments());
+        $model->equipments = $this->buildNestedEquipments($dto->getEquipments());
 
 
         return $model;

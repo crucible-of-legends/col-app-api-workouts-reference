@@ -5,14 +5,11 @@ namespace App\Domain\UseCase\ReferenceExercise;
 use App\Domain\DataInteractor\DTOProvider\ReferenceExerciseDTOProvider;
 use App\Domain\UseCase\GetManyUserCaseInterface;
 use App\Domain\View\Presenter\ReferenceExercise\GetManyReferenceExerciseViewPresenter;
-use COL\Library\Contracts\View\Model\Reference\GetManyReferenceExerciseViewModel;
+use COL\Library\Contracts\View\Model\BaseViewModelInterface;
+use COL\Library\Infrastructure\Common\View\MultipleObjectViewPresenterInterface;
 
 final class GetManyReferenceExerciseUseCase implements GetManyUserCaseInterface
 {
-
-    private const DEFAULT_PAGE_NUMBER = 1;
-    private const DEFAULT_NB_PER_PAGE = 50;
-
     private ReferenceExerciseDTOProvider $provider;
     private GetManyReferenceExerciseViewPresenter $presenter;
 
@@ -26,15 +23,18 @@ final class GetManyReferenceExerciseUseCase implements GetManyUserCaseInterface
     }
 
     /**
-     * @return GetManyReferenceExerciseViewModel[]
+     *  @return BaseViewModelInterface[]
      */
-    public function execute(array $criteria = [], ?int $pageNumber = null, ?int $nbPerPage = null): array
+    public function execute(string $displayFormat, array $criteria = [], ?int $pageNumber = null, ?int $nbPerPage = null): array
     {
-        $pageNumber = $pageNumber ?? self::DEFAULT_PAGE_NUMBER;
-        $nbPerPage = $nbPerPage ?? self::DEFAULT_NB_PER_PAGE;
+        $selects = [];
+        if (MultipleObjectViewPresenterInterface::DISPLAY_FORMAT_LARGE === $displayFormat) {
+            $selects = ['equipment', 'muscle'];
+        }
 
         return $this->presenter->buildMultipleObjectVueModel(
-            $this->provider->getManyByCriteria($criteria, [], [], $pageNumber, $nbPerPage),
+            $this->provider->getManyByCriteria($criteria, $selects, [], $pageNumber, $nbPerPage),
+            $displayFormat,
             $this->provider->countByCriteria($criteria),
             $pageNumber,
             $nbPerPage

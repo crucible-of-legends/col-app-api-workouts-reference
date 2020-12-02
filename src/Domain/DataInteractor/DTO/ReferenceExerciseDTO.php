@@ -2,18 +2,19 @@
 
 namespace App\Domain\DataInteractor\DTO;
 
+use COL\Library\Infrastructure\Adapter\Database\SQL\DatabaseCollectionAdapter;
 use COL\Library\Infrastructure\Common\DTO\AbstractSQLBaseDTO;
 use COL\Library\Infrastructure\Common\DTO\TimeAwareDTOTrait;
 
-final class ReferenceExerciseDTO extends AbstractSQLBaseDTO
+class ReferenceExerciseDTO extends AbstractSQLBaseDTO
 {
     use TimeAwareDTOTrait;
 
     private string $name;
     private string $canonicalName;
     private string $video;
-    private array $referenceMuscles;
-    private array $referenceEquipments;
+    private $muscles;
+    private $equipments;
 
     public function getDefaultStatus(): string
     {
@@ -50,23 +51,35 @@ final class ReferenceExerciseDTO extends AbstractSQLBaseDTO
         $this->video = $video;
     }
 
-    public function getReferenceMuscles(): array
+    /**
+     * @return ReferenceMuscleDTO[]
+     */
+    public function getMuscles(): array
     {
-        return $this->referenceMuscles;
+        return DatabaseCollectionAdapter::getDatabaseCollection($this->muscles);
     }
 
-    public function setReferenceMuscles(array $referenceMuscles): void
+    /**
+     * @param  ReferenceMuscleDTO[] $muscles
+     */
+    public function setMuscles(array $muscles): void
     {
-        $this->referenceMuscles = $referenceMuscles;
+        $this->muscles = $muscles;
     }
 
-    public function getReferenceEquipments(): array
+    /**
+     * @return ReferenceEquipmentDTO[]
+     */
+    public function getEquipments(): array
     {
-        return $this->referenceEquipments;
+        return DatabaseCollectionAdapter::getDatabaseCollection($this->equipments);
     }
 
-    public function setReferenceEquipments(array $referenceEquipments): void
+    /**
+     * @param  ReferenceEquipmentDTO[] $equipments
+     */
+    public function setEquipments(array $equipments): void
     {
-        $this->referenceEquipments = $referenceEquipments;
+        $this->equipments = $equipments;
     }
 }

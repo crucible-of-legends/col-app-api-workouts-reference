@@ -1,0 +1,18 @@
+App\Domain\DataInteractor\DTO\ReferenceExerciseDTO:
+  base_exercise (template):
+    status: active
+    video: "https://www.youtube.com/"
+    createdDate: "<(new DateTime())>"
+    updatedDate: "<(new DateTime())>"
+
+  exercise_biceps_curl_barbell (extends base_exercise):
+    name: "Biceps curl (barbell)"
+    canonicalName: "biceps-curl-barbell"
+    equipments: ['@equipment_barbell']
+    muscles: ['@muscle_biceps']
+
+  exercise_bench_press_barbell (extends base_exercise):
+    name: "Bench press (barbell)"
+    canonicalName: "bench-press-barbell"
+    equipments: ['@equipment_barbell', '@equipment_bench']
+    muscles: ['@muscle_pecs']

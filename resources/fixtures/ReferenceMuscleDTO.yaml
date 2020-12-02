@@ -1,0 +1,10 @@
+App\Domain\DataInteractor\DTO\ReferenceMuscleDTO:
+    base_muscle (template):
+        status: active
+        createdDate: "<(new DateTime())>"
+        updatedDate: "<(new DateTime())>"
+        image: "https://via.placeholder.com/150C"
+
+    muscle_{biceps, triceps, lat, abs, pecs, quadriceps} (extends base_muscle):
+        name: "<current()>"
+        canonicalName: "<current()>"

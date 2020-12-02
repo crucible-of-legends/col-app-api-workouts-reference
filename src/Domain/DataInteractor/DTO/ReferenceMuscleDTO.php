@@ -5,7 +5,7 @@ namespace App\Domain\DataInteractor\DTO;
 use COL\Library\Infrastructure\Common\DTO\AbstractSQLBaseDTO;
 use COL\Library\Infrastructure\Common\DTO\TimeAwareDTOTrait;
 
-final class ReferenceMuscleDTO extends AbstractSQLBaseDTO
+class ReferenceMuscleDTO extends AbstractSQLBaseDTO
 {
     use TimeAwareDTOTrait;
 
