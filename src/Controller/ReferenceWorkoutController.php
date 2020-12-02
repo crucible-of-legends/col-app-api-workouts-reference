@@ -2,14 +2,15 @@
 
 namespace App\Controller;
 
+use App\Domain\UseCase\ReferenceWorkout\GetOneReferenceWorkoutUseCase;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route(path="/api/references/programs", name="program_")
+ * @Route(path="/api/references/workouts", name="workout_")
  */
-final class ReferenceProgramReferenceController extends AbstractBaseReferenceController
+final class ReferenceWorkoutController extends AbstractBaseReferenceController
 {
     /**
      * @Route(name="get_many", path="", methods={"GET"})
@@ -21,8 +22,8 @@ final class ReferenceProgramReferenceController extends AbstractBaseReferenceCon
     /**
      * @Route(name="get_one", path="/{canonicalName}", methods={"GET"})
      */
-    public function getOne(Request $request, string $canonicalName): JsonResponse
+    public function getOne(Request $request, string $canonicalName, GetOneReferenceWorkoutUseCase $getOneReferenceWorkoutUseCase): JsonResponse
     {
-        return new JsonResponse(['status' => $canonicalName]);
+        return $this->buildResponse($getOneReferenceWorkoutUseCase->execute($canonicalName));
     }
 }

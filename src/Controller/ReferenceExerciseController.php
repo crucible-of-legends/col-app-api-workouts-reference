@@ -11,14 +11,13 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route(path="/api/references/exercises", name="exercise_")
  */
-final class ReferenceExerciseReferenceController extends AbstractBaseReferenceController
+final class ReferenceExerciseController extends AbstractBaseReferenceController
 {
     /**
      * @Route(name="get_many", path="", methods={"GET"})
      */
     public function getMany(Request $request, GetManyReferenceExerciseUseCase $getManyReferenceExerciseUseCase): JsonResponse
     {
-
         return $this->buildResponse($getManyReferenceExerciseUseCase->execute(
             $this->getFormat($request),
             [],

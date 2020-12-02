@@ -1,6 +1,6 @@
 App\Domain\DataInteractor\DTO\ReferenceMuscleDTO:
     base_muscle (template):
-        status: active
+        status: "active"
         createdDate: "<(new DateTime())>"
         updatedDate: "<(new DateTime())>"
         image: "https://via.placeholder.com/150C"

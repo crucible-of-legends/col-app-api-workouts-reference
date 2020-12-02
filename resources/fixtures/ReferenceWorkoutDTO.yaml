@@ -1,0 +1,10 @@
+App\Domain\DataInteractor\DTO\ReferenceWorkoutDTO:
+    base_workout (template):
+        status: "active"
+        createdDate: "<(new DateTime())>"
+        updatedDate: "<(new DateTime())>"
+        image: "https://via.placeholder.com/150C"
+
+    workout_ares (extends base_workout):
+        name: "ares"
+        canonicalName: "ares"

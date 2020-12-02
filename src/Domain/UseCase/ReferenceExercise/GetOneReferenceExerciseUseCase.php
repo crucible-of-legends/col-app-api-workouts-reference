@@ -9,7 +9,6 @@ use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\GetOneReferenc
 
 final class GetOneReferenceExerciseUseCase
 {
-
     private ReferenceExerciseDTOProvider $provider;
     private GetOneReferenceExerciseViewPresenter $presenter;
 

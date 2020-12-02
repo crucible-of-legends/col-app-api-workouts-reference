@@ -2,18 +2,18 @@
 
 namespace App\Domain\DataInteractor\DTO;
 
+use COL\Library\Infrastructure\Adapter\Database\SQL\DatabaseCollectionAdapter;
 use COL\Library\Infrastructure\Common\DTO\AbstractSQLBaseDTO;
 use COL\Library\Infrastructure\Common\DTO\TimeAwareDTOTrait;
 
-final class ReferenceWorkoutDTO extends AbstractSQLBaseDTO
+class ReferenceWorkoutDTO extends AbstractSQLBaseDTO
 {
     use TimeAwareDTOTrait;
 
     private string $name;
     private string $canonicalName;
     private string $image;
-    private array $refExercisesOrdered;
-    private array $referenceModulesOrdered;
+    private $orderedExercises;
 
     public function getDefaultStatus(): string
     {
@@ -51,28 +51,18 @@ final class ReferenceWorkoutDTO extends AbstractSQLBaseDTO
     }
 
     /**
-     * @return RefExerciseOrderedInRefWorkoutDTO[]
+     * @return ReferenceExerciseInWorkoutDTO[]
      */
-    public function getRefExercisesOrdered(): array
+    public function getOrderedExercises(): array
     {
-        return $this->refExercisesOrdered;
+        return DatabaseCollectionAdapter::getDatabaseCollection($this->orderedExercises);
     }
 
     /**
-     * @param RefExerciseOrderedInRefWorkoutDTO[]
+     * @param ReferenceExerciseInWorkoutDTO[] $orderedExercises
      */
-    public function setRefExercisesOrdered(array $refExercisesOrdered): void
+    public function setOrderedExercises(array $orderedExercises): void
     {
-        $this->refExercisesOrdered = $refExercisesOrdered;
-    }
-
-    public function getReferenceModulesOrdered(): array
-    {
-        return $this->referenceModulesOrdered;
-    }
-
-    public function setReferenceModulesOrdered(array $referenceModulesOrdered): void
-    {
-        $this->referenceModulesOrdered = $referenceModulesOrdered;
+        $this->orderedExercises = $orderedExercises;
     }
 }

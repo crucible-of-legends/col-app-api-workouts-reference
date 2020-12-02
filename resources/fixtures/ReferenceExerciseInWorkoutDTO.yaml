@@ -1,0 +1,15 @@
+App\Domain\DataInteractor\DTO\ReferenceExerciseInWorkoutDTO:
+    base_exercise_in_workout (template):
+        status: "active"
+        createdDate: "<(new DateTime())>"
+        updatedDate: "<(new DateTime())>"
+
+    exercise_1_in_ares (extends base_exercise_in_workout):
+        workout: "@workout_ares"
+        exercise: "@exercise_biceps_curl_barbell"
+        position: 1
+
+    exercise_2_in_ares (extends base_exercise_in_workout):
+        workout: "@workout_ares"
+        exercise: "@exercise_bench_press_barbell"
+        position: 2

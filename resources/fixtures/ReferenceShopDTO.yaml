@@ -1,6 +1,6 @@
 App\Domain\DataInteractor\DTO\ReferenceShopDTO:
     base_shop (template):
-        status: active
+        status: "active"
         createdDate: "<(new DateTime())>"
         updatedDate: "<(new DateTime())>"
         logo: "https://via.placeholder.com/150C"

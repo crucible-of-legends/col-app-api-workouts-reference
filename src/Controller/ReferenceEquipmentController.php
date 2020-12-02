@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route(path="/api/references/equipments", name="equipment_")
  */
-final class ReferenceEquipmentReferenceController extends AbstractBaseReferenceController
+final class ReferenceEquipmentController extends AbstractBaseReferenceController
 {
     /**
      * @Route(name="get_many", path="", methods={"GET"})

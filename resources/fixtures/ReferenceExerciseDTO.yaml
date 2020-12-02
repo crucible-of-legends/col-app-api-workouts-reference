@@ -1,6 +1,6 @@
 App\Domain\DataInteractor\DTO\ReferenceExerciseDTO:
   base_exercise (template):
-    status: active
+    status: "active"
     video: "https://www.youtube.com/"
     createdDate: "<(new DateTime())>"
     updatedDate: "<(new DateTime())>"

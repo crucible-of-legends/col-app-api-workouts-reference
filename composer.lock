@@ -67,12 +67,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/crucible-of-legends/col-lib-api-contracts.git",
-                "reference": "33f493f9ce3f1fddcdaf3821d3a7058da54b09a5"
+                "reference": "6a28b92afd8f75817d273f6ae474446b63d8f939"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/crucible-of-legends/col-lib-api-contracts/zipball/33f493f9ce3f1fddcdaf3821d3a7058da54b09a5",
-                "reference": "33f493f9ce3f1fddcdaf3821d3a7058da54b09a5",
+                "url": "https://api.github.com/repos/crucible-of-legends/col-lib-api-contracts/zipball/6a28b92afd8f75817d273f6ae474446b63d8f939",
+                "reference": "6a28b92afd8f75817d273f6ae474446b63d8f939",
                 "shasum": ""
             },
             "require": {
@@ -100,7 +100,7 @@
                 "source": "https://github.com/crucible-of-legends/col-lib-api-contracts/tree/1.x",
                 "issues": "https://github.com/crucible-of-legends/col-lib-api-contracts/issues"
             },
-            "time": "2020-12-02T09:14:47+00:00"
+            "time": "2020-12-02T13:14:28+00:00"
         },
         {
             "name": "crucible-of-legends/col-lib-api-infrastructure",
