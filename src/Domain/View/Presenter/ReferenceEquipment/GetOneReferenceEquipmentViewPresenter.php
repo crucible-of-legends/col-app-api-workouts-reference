@@ -17,7 +17,7 @@ final class GetOneReferenceEquipmentViewPresenter implements SingleObjectViewPre
      *
      * @return BaseViewModelInterface|GetOneReferenceEquipmentViewModel
      */
-    public function buildSingleObjectVueModel(BaseDTOInterface $dto): BaseViewModelInterface
+    public function buildSingleObjectVueModel(BaseDTOInterface $dto, ?string $displayFormat = null): BaseViewModelInterface
     {
         $model = new GetOneReferenceEquipmentViewModel();
         $model->name = $dto->getName();

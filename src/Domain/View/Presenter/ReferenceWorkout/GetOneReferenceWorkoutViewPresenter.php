@@ -19,7 +19,7 @@ final class GetOneReferenceWorkoutViewPresenter implements SingleObjectViewPrese
      *
      * @return BaseViewModelInterface|GetOneReferenceWorkoutViewModel
      */
-    public function buildSingleObjectVueModel(BaseDTOInterface $dto): BaseViewModelInterface
+    public function buildSingleObjectVueModel(BaseDTOInterface $dto, ?string $displayFormat = null): BaseViewModelInterface
     {
         $model = new GetOneReferenceWorkoutViewModel();
         $model->name = $dto->getName();

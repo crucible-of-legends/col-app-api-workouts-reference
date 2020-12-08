@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use  COL\Library\Infrastructure\Common\Controller\AbstractBaseController;
+use COL\Library\Infrastructure\Common\Controller\AbstractBaseController;
 use COL\Library\Infrastructure\Common\View\MultipleObjectViewPresenterInterface;
 use Symfony\Component\HttpFoundation\Request;
 
