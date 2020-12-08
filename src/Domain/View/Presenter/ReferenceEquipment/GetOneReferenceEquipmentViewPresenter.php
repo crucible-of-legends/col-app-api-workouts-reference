@@ -8,9 +8,10 @@ use COL\Library\Contracts\View\Model\BaseViewModelInterface;
 use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\GetOneReferenceEquipmentViewModel;
 use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\Nested\ReferenceEquipmentShopNestedModel;
 use COL\Library\Infrastructure\Common\DTO\BaseDTOInterface;
+use COL\Library\Infrastructure\Common\View\AbstractSingleObjectViewPresenter;
 use COL\Library\Infrastructure\Common\View\SingleObjectViewPresenterInterface;
 
-final class GetOneReferenceEquipmentViewPresenter implements SingleObjectViewPresenterInterface
+final class GetOneReferenceEquipmentViewPresenter extends AbstractSingleObjectViewPresenter
 {
     /**
      * @param BaseDTOInterface|ReferenceEquipmentDTO $dto

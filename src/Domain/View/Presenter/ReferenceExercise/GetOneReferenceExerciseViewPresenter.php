@@ -10,9 +10,9 @@ use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\GetOneReferenc
 use COL\Library\Contracts\View\Model\Reference\ReferenceExercise\Nested\ReferenceExerciseEquipmentNestedModel;
 use COL\Library\Contracts\View\Model\Reference\ReferenceExercise\Nested\ReferenceExerciseMuscleNestedModel;
 use COL\Library\Infrastructure\Common\DTO\BaseDTOInterface;
-use COL\Library\Infrastructure\Common\View\SingleObjectViewPresenterInterface;
+use COL\Library\Infrastructure\Common\View\AbstractSingleObjectViewPresenter;
 
-final class GetOneReferenceExerciseViewPresenter implements SingleObjectViewPresenterInterface
+final class GetOneReferenceExerciseViewPresenter extends AbstractSingleObjectViewPresenter
 {
     /**
      * @param BaseDTOInterface|ReferenceExerciseDTO $dto
