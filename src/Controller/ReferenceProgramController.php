@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route(path="/api/references/programs", name="program_")
+ * @Route(path="/api/workouts-reference/programs", name="workouts_reference_program_")
  */
 final class ReferenceProgramController extends AbstractBaseReferenceController
 {

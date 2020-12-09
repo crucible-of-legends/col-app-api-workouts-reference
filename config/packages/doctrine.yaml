@@ -1,5 +1,6 @@
 doctrine:
     dbal:
+        default_connection: workout_reference
         connections:
             workout_reference:
                 host:     '%env(resolve:MYSQL_HOST)%'

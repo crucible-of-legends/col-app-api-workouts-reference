@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route(path="/api/references/equipments", name="equipment_")
+ * @Route(path="/api/workouts-reference/equipments", name="workouts_reference_equipment_")
  */
 final class ReferenceEquipmentController extends AbstractBaseReferenceController
 {

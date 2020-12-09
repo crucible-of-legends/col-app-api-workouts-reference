@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route(path="/api/references/modules", name="module_")
+ * @Route(path="/api/workouts-reference/modules", name="workouts_reference_module_")
  */
 final class ReferenceModuleController extends AbstractBaseReferenceController
 {
