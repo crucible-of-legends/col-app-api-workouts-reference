@@ -6,6 +6,7 @@ use App\Domain\DataInteractor\DTOProvider\ReferenceExerciseDTOProvider;
 use App\Domain\UseCase\GetManyUserCaseInterface;
 use App\Domain\View\Presenter\ReferenceExercise\GetManyReferenceExerciseViewPresenter;
 use COL\Library\Contracts\View\Model\BaseViewModelInterface;
+use COL\Library\Infrastructure\Common\Registry\DisplayFormatRegistry;
 use COL\Library\Infrastructure\Common\View\MultipleObjectViewPresenterInterface;
 
 final class GetManyReferenceExerciseUseCase implements GetManyUserCaseInterface
@@ -28,7 +29,7 @@ final class GetManyReferenceExerciseUseCase implements GetManyUserCaseInterface
     public function execute(string $displayFormat, array $criteria = [], ?int $pageNumber = null, ?int $nbPerPage = null): array
     {
         $selects = [];
-        if (MultipleObjectViewPresenterInterface::DISPLAY_FORMAT_LARGE === $displayFormat) {
+        if (DisplayFormatRegistry::DISPLAY_FORMAT_LARGE === $displayFormat) {
             $selects = ['equipment', 'muscle'];
         }
 

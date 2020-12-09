@@ -2,15 +2,18 @@
 
 namespace App\Controller;
 
-use COL\Library\Infrastructure\Common\Controller\AbstractBaseController;
+use COL\Library\Infrastructure\Common\Controller\ApiResponseTrait;
+use COL\Library\Infrastructure\Common\Registry\DisplayFormatRegistry;
 use COL\Library\Infrastructure\Common\View\MultipleObjectViewPresenterInterface;
 use Symfony\Component\HttpFoundation\Request;
 
-abstract class AbstractBaseReferenceController extends AbstractBaseController
+abstract class AbstractBaseReferenceController
 {
+    use ApiResponseTrait;
+
     public function getFormat(Request $request): string
     {
-        return $request->query->get('format', MultipleObjectViewPresenterInterface::DISPLAY_FORMAT_SMALL);
+        return $request->query->get('format', DisplayFormatRegistry::DISPLAY_FORMAT_SMALL);
     }
 
     public function getPageNumber(Request $request): int

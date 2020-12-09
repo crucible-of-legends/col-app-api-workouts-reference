@@ -6,6 +6,7 @@ use App\Domain\DataInteractor\DTOProvider\ReferenceEquipmentDTOProvider;
 use App\Domain\UseCase\GetManyUserCaseInterface;
 use App\Domain\View\Presenter\ReferenceEquipment\GetManyReferenceEquipmentViewPresenter;
 use COL\Library\Contracts\View\Model\BaseViewModelInterface;
+use COL\Library\Infrastructure\Common\Registry\DisplayFormatRegistry;
 use COL\Library\Infrastructure\Common\View\MultipleObjectViewPresenterInterface;
 
 final class GetManyReferenceEquipmentUseCase implements GetManyUserCaseInterface
@@ -39,7 +40,7 @@ final class GetManyReferenceEquipmentUseCase implements GetManyUserCaseInterface
         $nbPerPage = $nbPerPage ?? self::DEFAULT_NB_PER_PAGE;
 
         $selects = [];
-        if (MultipleObjectViewPresenterInterface::DISPLAY_FORMAT_LARGE === $displayFormat) {
+        if (DisplayFormatRegistry::DISPLAY_FORMAT_LARGE === $displayFormat) {
             $selects = ['shop'];
         }
 
