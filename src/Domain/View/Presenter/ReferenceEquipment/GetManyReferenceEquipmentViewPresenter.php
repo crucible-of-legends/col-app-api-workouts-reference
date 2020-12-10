@@ -4,10 +4,10 @@ namespace App\Domain\View\Presenter\ReferenceEquipment;
 
 use App\Domain\DataInteractor\DTO\ReferenceEquipmentDTO;
 use COL\Library\Contracts\View\Model\BaseViewModelInterface;
-use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\GetManyLargeReferenceEquipmentViewModel;
-use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\GetManyMediumReferenceEquipmentViewModel;
-use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\GetManySmallReferenceEquipmentViewModel;
-use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\Nested\ReferenceEquipmentShopNestedModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceEquipment\GetManyLargeReferenceEquipmentViewModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceEquipment\GetManyMediumReferenceEquipmentViewModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceEquipment\GetManySmallReferenceEquipmentViewModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceEquipment\Nested\ReferenceEquipmentShopNestedModel;
 use COL\Library\Infrastructure\Common\DTO\BaseDTOInterface;
 use COL\Library\Infrastructure\Common\View\AbstractMultipleObjectViewPresenter;
 

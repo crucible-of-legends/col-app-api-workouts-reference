@@ -45,5 +45,5 @@ create_db:
 load_fixtures:
 	$(SF_CONSOLE) hautelook:fixtures:load --purge-with-truncate --no-interaction --env=dev --no-bundles
 
-mysql.connect.reference:
-	@$(DOCKER_EXEC) mysql-reference /bin/bash -c 'mysql -u$$MYSQL_USER -p$$MYSQL_PASSWORD $$MYSQL_DATABASE'
+mysql.connect.workouts-reference:
+	@$(DOCKER_EXEC) mysql-workouts-reference /bin/bash -c 'mysql -u$$MYSQL_USER -p$$MYSQL_PASSWORD $$MYSQL_DATABASE'

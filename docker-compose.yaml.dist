@@ -48,7 +48,7 @@ services:
         networks:
           - "crucible-of-heroes-v2"
 
-    mysql-reference:
+    mysql-workouts-reference:
         container_name: mysql-${PROJECT}
         build:
           context: ./.docker/mysql/${MYSQL_VERSION}

@@ -5,7 +5,7 @@ namespace App\Domain\UseCase\ReferenceEquipment;
 use App\Domain\DataInteractor\DTOProvider\ReferenceEquipmentDTOProvider;
 use App\Domain\View\Presenter\ReferenceEquipment\GetOneReferenceEquipmentViewPresenter;
 use COL\Library\Contracts\View\Model\BaseViewModelInterface;
-use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\GetOneReferenceEquipmentViewModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceEquipment\GetOneReferenceEquipmentViewModel;
 
 final class GetOneReferenceEquipmentUseCase
 {

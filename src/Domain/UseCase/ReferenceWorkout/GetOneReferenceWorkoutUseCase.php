@@ -5,7 +5,7 @@ namespace App\Domain\UseCase\ReferenceWorkout;
 use App\Domain\DataInteractor\DTOProvider\ReferenceWorkoutDTOProvider;
 use App\Domain\View\Presenter\ReferenceWorkout\GetOneReferenceWorkoutViewPresenter;
 use COL\Library\Contracts\View\Model\BaseViewModelInterface;
-use COL\Library\Contracts\View\Model\Reference\ReferenceWorkout\GetOneReferenceWorkoutViewModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceWorkout\GetOneReferenceWorkoutViewModel;
 
 final class GetOneReferenceWorkoutUseCase
 {

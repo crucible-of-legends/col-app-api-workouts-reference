@@ -6,9 +6,9 @@ use App\Domain\DataInteractor\DTO\ReferenceEquipmentDTO;
 use App\Domain\DataInteractor\DTO\ReferenceExerciseDTO;
 use App\Domain\DataInteractor\DTO\ReferenceMuscleDTO;
 use COL\Library\Contracts\View\Model\BaseViewModelInterface;
-use COL\Library\Contracts\View\Model\Reference\ReferenceEquipment\GetOneReferenceExerciseViewModel;
-use COL\Library\Contracts\View\Model\Reference\ReferenceExercise\Nested\ReferenceExerciseEquipmentNestedModel;
-use COL\Library\Contracts\View\Model\Reference\ReferenceExercise\Nested\ReferenceExerciseMuscleNestedModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceEquipment\GetOneReferenceExerciseViewModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceExercise\Nested\ReferenceExerciseEquipmentNestedModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceExercise\Nested\ReferenceExerciseMuscleNestedModel;
 use COL\Library\Infrastructure\Common\DTO\BaseDTOInterface;
 use COL\Library\Infrastructure\Common\View\AbstractSingleObjectViewPresenter;
 

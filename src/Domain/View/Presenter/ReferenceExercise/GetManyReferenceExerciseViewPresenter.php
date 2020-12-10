@@ -5,10 +5,10 @@ namespace App\Domain\View\Presenter\ReferenceExercise;
 use App\Domain\DataInteractor\DTO\ReferenceEquipmentDTO;
 use App\Domain\DataInteractor\DTO\ReferenceExerciseDTO;
 use COL\Library\Contracts\View\Model\BaseViewModelInterface;
-use COL\Library\Contracts\View\Model\Reference\ReferenceExercise\GetManyLargeReferenceExerciseViewModel;
-use COL\Library\Contracts\View\Model\Reference\ReferenceExercise\GetManyMediumReferenceExerciseViewModel;
-use COL\Library\Contracts\View\Model\Reference\ReferenceExercise\GetManySmallReferenceExerciseViewModel;
-use COL\Library\Contracts\View\Model\Reference\ReferenceExercise\Nested\ReferenceExerciseEquipmentNestedModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceExercise\GetManyLargeReferenceExerciseViewModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceExercise\GetManyMediumReferenceExerciseViewModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceExercise\GetManySmallReferenceExerciseViewModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceExercise\Nested\ReferenceExerciseEquipmentNestedModel;
 use COL\Library\Infrastructure\Common\DTO\BaseDTOInterface;
 use COL\Library\Infrastructure\Common\View\AbstractMultipleObjectViewPresenter;
 

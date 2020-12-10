@@ -6,9 +6,9 @@ use App\Domain\DataInteractor\DTO\ReferenceEquipmentDTO;
 use App\Domain\DataInteractor\DTO\ReferenceExerciseInWorkoutDTO;
 use App\Domain\DataInteractor\DTO\ReferenceWorkoutDTO;
 use COL\Library\Contracts\View\Model\BaseViewModelInterface;
-use COL\Library\Contracts\View\Model\Reference\ReferenceWorkout\Nested\ReferenceExerciseEquipmentNestedModel;
-use COL\Library\Contracts\View\Model\Reference\ReferenceWorkout\GetOneReferenceWorkoutViewModel;
-use COL\Library\Contracts\View\Model\Reference\ReferenceWorkout\Nested\ReferenceExerciseInWorkoutNestedModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceWorkout\Nested\ReferenceExerciseEquipmentNestedModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceWorkout\GetOneReferenceWorkoutViewModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceWorkout\Nested\ReferenceExerciseInWorkoutNestedModel;
 use COL\Library\Infrastructure\Common\DTO\BaseDTOInterface;
 use COL\Library\Infrastructure\Common\View\AbstractSingleObjectViewPresenter;
 
