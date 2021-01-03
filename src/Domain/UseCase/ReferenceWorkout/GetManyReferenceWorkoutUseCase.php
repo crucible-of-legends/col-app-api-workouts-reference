@@ -2,10 +2,10 @@
 
 namespace App\Domain\UseCase\ReferenceWorkout;
 
-use App\Domain\UseCase\GetManyUserCaseInterface;
+use App\Domain\UseCase\GetManyUseCaseInterface;
 use COL\Library\Contracts\View\Model\BaseViewModelInterface;
 
-final class GetManyReferenceWorkoutUseCase  implements GetManyUserCaseInterface
+final class GetManyReferenceWorkoutUseCase  implements GetManyUseCaseInterface
 {
 
     /**

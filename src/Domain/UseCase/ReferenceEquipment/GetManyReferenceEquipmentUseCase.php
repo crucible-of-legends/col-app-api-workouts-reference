@@ -3,13 +3,12 @@
 namespace App\Domain\UseCase\ReferenceEquipment;
 
 use App\Domain\DataInteractor\DTOProvider\ReferenceEquipmentDTOProvider;
-use App\Domain\UseCase\GetManyUserCaseInterface;
+use App\Domain\UseCase\GetManyUseCaseInterface;
 use App\Domain\View\Presenter\ReferenceEquipment\GetManyReferenceEquipmentViewPresenter;
 use COL\Library\Contracts\View\Model\BaseViewModelInterface;
 use COL\Library\Infrastructure\Common\Registry\DisplayFormatRegistry;
-use COL\Library\Infrastructure\Common\View\MultipleObjectViewPresenterInterface;
 
-final class GetManyReferenceEquipmentUseCase implements GetManyUserCaseInterface
+final class GetManyReferenceEquipmentUseCase implements GetManyUseCaseInterface
 {
     private const DEFAULT_PAGE_NUMBER = 1;
     private const DEFAULT_NB_PER_PAGE = 50;

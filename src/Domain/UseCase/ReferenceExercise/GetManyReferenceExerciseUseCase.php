@@ -3,13 +3,13 @@
 namespace App\Domain\UseCase\ReferenceExercise;
 
 use App\Domain\DataInteractor\DTOProvider\ReferenceExerciseDTOProvider;
-use App\Domain\UseCase\GetManyUserCaseInterface;
+use App\Domain\UseCase\GetManyUseCaseInterface;
 use App\Domain\View\Presenter\ReferenceExercise\GetManyReferenceExerciseViewPresenter;
 use COL\Library\Contracts\View\Model\BaseViewModelInterface;
 use COL\Library\Infrastructure\Common\Registry\DisplayFormatRegistry;
 use COL\Library\Infrastructure\Common\View\MultipleObjectViewPresenterInterface;
 
-final class GetManyReferenceExerciseUseCase implements GetManyUserCaseInterface
+final class GetManyReferenceExerciseUseCase implements GetManyUseCaseInterface
 {
     private ReferenceExerciseDTOProvider $provider;
     private GetManyReferenceExerciseViewPresenter $presenter;

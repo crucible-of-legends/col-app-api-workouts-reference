@@ -2,7 +2,7 @@
 
 namespace App\Domain\UseCase;
 
-interface GetManyUserCaseInterface
+interface GetManyUseCaseInterface
 {
     public function execute(string $displayFormat, array $criteria = [], ?int $pageNumber = null, ?int $nbPerPage = null): array;
 }
