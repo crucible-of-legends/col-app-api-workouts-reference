@@ -13,7 +13,10 @@ class ReferenceExerciseDTO extends AbstractSQLBaseDTO
     private string $name;
     private string $canonicalName;
     private string $video;
+
+    /** @var ReferenceMuscleDTO[] */
     private $muscles;
+    /** @var ReferenceEquipmentDTO[] */
     private $equipments;
 
     public function getDefaultStatus(): string

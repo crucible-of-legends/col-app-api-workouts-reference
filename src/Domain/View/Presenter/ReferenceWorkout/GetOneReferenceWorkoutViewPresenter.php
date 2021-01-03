@@ -8,7 +8,7 @@ use App\Domain\DataInteractor\DTO\ReferenceWorkoutDTO;
 use COL\Library\Contracts\View\Model\BaseViewModelInterface;
 use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceWorkout\Nested\ReferenceExerciseEquipmentNestedModel;
 use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceWorkout\GetOneReferenceWorkoutViewModel;
-use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceWorkout\Nested\ReferenceExerciseInWorkoutNestedModel;
+use COL\Library\Contracts\View\Model\WorkoutReference\ReferenceWorkout\Nested\ReferenceExerciseInOneWorkoutNestedModel;
 use COL\Library\Infrastructure\Common\DTO\BaseDTOInterface;
 use COL\Library\Infrastructure\Common\View\AbstractSingleObjectViewPresenter;
 
@@ -33,13 +33,13 @@ final class GetOneReferenceWorkoutViewPresenter extends AbstractSingleObjectView
     /**
      * @param ReferenceExerciseInWorkoutDTO[] $exercisesInWorkout
      *
-     * @return ReferenceExerciseInWorkoutNestedModel[]
+     * @return ReferenceExerciseInOneWorkoutNestedModel[]
      */
     private function buildNestedExercises(array $exercisesInWorkout): array
     {
         $nestedExercises = [];
         foreach ($exercisesInWorkout as $exerciseInWorkout) {
-            $nested = new ReferenceExerciseInWorkoutNestedModel();
+            $nested = new ReferenceExerciseInOneWorkoutNestedModel();
             $nested->name = $exerciseInWorkout->getExercise()->getName();
             $nested->canonicalName = $exerciseInWorkout->getExercise()->getCanonicalName();
             $nested->image = $exerciseInWorkout->getExercise()->getVideo();

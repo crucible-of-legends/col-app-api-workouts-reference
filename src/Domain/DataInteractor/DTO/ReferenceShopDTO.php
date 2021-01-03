@@ -13,6 +13,8 @@ class ReferenceShopDTO extends AbstractSQLBaseDTO
     private string $name;
     private ?string $logo;
     private string $url;
+
+    /** @var ReferenceEquipmentDTO[] */
     private $equipments;
 
     public function getDefaultStatus(): string
@@ -50,11 +52,17 @@ class ReferenceShopDTO extends AbstractSQLBaseDTO
         $this->url = $url;
     }
 
+    /**
+     * @return ReferenceEquipmentDTO[]
+     */
     public function getEquipments(): array
     {
         return DatabaseCollectionAdapter::getDatabaseCollection($this->equipments);
     }
 
+    /**
+     * @param ReferenceEquipmentDTO[] $equipments
+     */
     public function setEquipments(array $equipments): void
     {
         $this->equipments = $equipments;

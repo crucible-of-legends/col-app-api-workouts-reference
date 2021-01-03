@@ -13,6 +13,8 @@ class ReferenceWorkoutDTO extends AbstractSQLBaseDTO
     private string $name;
     private string $canonicalName;
     private string $image;
+
+    /** @var ReferenceExerciseInWorkoutDTO[] */
     private $orderedExercises;
 
     public function getDefaultStatus(): string

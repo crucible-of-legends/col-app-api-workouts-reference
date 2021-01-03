@@ -13,3 +13,13 @@ App\Domain\DataInteractor\DTO\ReferenceExerciseInWorkoutDTO:
         workout: "@workout_ares"
         exercise: "@exercise_bench_press_barbell"
         position: 2
+
+    exercise_1_in_hera (extends base_exercise_in_workout):
+        workout: "@workout_hera"
+        exercise: "@exercise_biceps_curl_barbell"
+        position: 1
+
+    exercise_2_in_hera (extends base_exercise_in_workout):
+        workout: "@workout_hera"
+        exercise: "@exercise_biceps_curl_barbell"
+        position: 2

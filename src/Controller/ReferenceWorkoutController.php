@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Domain\UseCase\ReferenceWorkout\GetManyReferenceWorkoutUseCase;
 use App\Domain\UseCase\ReferenceWorkout\GetOneReferenceWorkoutUseCase;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,10 +16,16 @@ final class ReferenceWorkoutController extends AbstractBaseReferenceController
     /**
      * @Route(name="get_many", path="", methods={"GET"})
      */
-    public function getMany(Request $request): JsonResponse
+    public function getMany(Request $request, GetManyReferenceWorkoutUseCase $getManyReferenceWorkoutUseCase): JsonResponse
     {
-        return new JsonResponse(['status' => 'ok']);
+        return $this->buildResponse($getManyReferenceWorkoutUseCase->execute(
+            $this->getFormat($request),
+            [],
+            $this->getPageNumber($request),
+            $this->getNbPerPage($request)
+        ));
     }
+
     /**
      * @Route(name="get_one", path="/{canonicalName}", methods={"GET"})
      */

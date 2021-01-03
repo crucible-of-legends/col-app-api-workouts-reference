@@ -8,3 +8,7 @@ App\Domain\DataInteractor\DTO\ReferenceWorkoutDTO:
     workout_ares (extends base_workout):
         name: "ares"
         canonicalName: "ares"
+
+    workout_hera (extends base_workout):
+        name: "hera"
+        canonicalName: "hera"
