@@ -7,19 +7,23 @@ App\Domain\DataInteractor\DTO\ReferenceExerciseInWorkoutDTO:
     exercise_1_in_ares (extends base_exercise_in_workout):
         workout: "@workout_ares"
         exercise: "@exercise_biceps_curl_barbell"
+        nbReps: 10
         position: 1
 
     exercise_2_in_ares (extends base_exercise_in_workout):
         workout: "@workout_ares"
         exercise: "@exercise_bench_press_barbell"
+        nbReps: 6
         position: 2
 
     exercise_1_in_hera (extends base_exercise_in_workout):
         workout: "@workout_hera"
         exercise: "@exercise_biceps_curl_barbell"
+        nbReps: 15
         position: 1
 
     exercise_2_in_hera (extends base_exercise_in_workout):
         workout: "@workout_hera"
         exercise: "@exercise_biceps_curl_barbell"
+        nbReps: 12
         position: 2

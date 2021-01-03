@@ -72,6 +72,10 @@ final class GetManyReferenceWorkoutViewPresenter extends AbstractMultipleObjectV
             $nested->name = $exerciseInWorkout->getExercise()->getName();
             $nested->canonicalName = $exerciseInWorkout->getExercise()->getCanonicalName();
             $nested->image = $exerciseInWorkout->getExercise()->getVideo();
+            $nested->restDuration = $exerciseInWorkout->getRestDuration();
+            $nested->nbReps = $exerciseInWorkout->getNbReps();
+            $nested->distance = $exerciseInWorkout->getDistance();
+            $nested->duration = $exerciseInWorkout->getDuration();
             $nested->position = $exerciseInWorkout->getPosition();
 
             $nestedExercises[] = $nested;

@@ -11,6 +11,11 @@ class ReferenceExerciseInWorkoutDTO extends AbstractSQLBaseDTO
 
     private ReferenceExerciseDTO $exercise;
     private ReferenceWorkoutDTO $workout;
+
+    private ?int $restDuration; // in seconds
+    private ?int $nbReps;
+    private ?int $distance; // in meters
+    private ?int $duration; // in seconds
     private int $position;
 
     public function getDefaultStatus(): string
@@ -36,6 +41,46 @@ class ReferenceExerciseInWorkoutDTO extends AbstractSQLBaseDTO
     public function setWorkout(ReferenceWorkoutDTO $workout): void
     {
         $this->workout = $workout;
+    }
+
+    public function getRestDuration(): ?int
+    {
+        return $this->restDuration;
+    }
+
+    public function setRestDuration(?int $restDuration): void
+    {
+        $this->restDuration = $restDuration;
+    }
+
+    public function getNbReps(): ?int
+    {
+        return $this->nbReps;
+    }
+
+    public function setNbReps(?int $nbReps): void
+    {
+        $this->nbReps = $nbReps;
+    }
+
+    public function getDistance(): ?int
+    {
+        return $this->distance;
+    }
+
+    public function setDistance(?int $distance): void
+    {
+        $this->distance = $distance;
+    }
+
+    public function getDuration(): ?int
+    {
+        return $this->duration;
+    }
+
+    public function setDuration(?int $duration): void
+    {
+        $this->duration = $duration;
     }
 
     public function getPosition(): int
